@@ -1,5 +1,5 @@
  body {
-      background-color: #fcf0e7;
+      background-color: #ffffff;
       font-family: Arial, sans-serif;
       font-size: 16px;
       line-height: 1.5;
@@ -97,4 +97,8 @@
       color: #f8dcd0;
       padding: 10px;
       text-align: center;
+    }
+
+    .coffee-item {
+      background: white;
     }

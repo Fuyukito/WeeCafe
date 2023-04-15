@@ -22,22 +22,4 @@
       </ul>
     </nav>
   </header>
-
-  <body>
-    <div id="dropzone" ondragover="allowDrop(event)" ondrop="drop(event)">
-      Drop your image here
-    </div>
-    <script>
-      function allowDrop(event) {
-        event.preventDefault();
-      }
-
-      function drop(event) {
-        event.preventDefault();
-        var data = event.dataTransfer.getData("text");
-        var draggedImage = document.getElementById(data);
-        event.target.appendChild(draggedImage);
-      }
-    </script>
-  </body>
 </html>

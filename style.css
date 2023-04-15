@@ -1,104 +1,107 @@
  body {
-      background-color: #ffffff;
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.5;
-    }
+   background-color: #ffffff;
+   font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+   font-size: 16px;
+   line-height: 1.5;
+ }
 
-    header {
-      background-color: #6d3504;
-      color: #F2EDEB;
-      padding: 20px;
-    }
+ header {
+   background-color: #6d3504;
+   color: #F2EDEB;
+   padding: 20px;
+ }
 
-    h1 {
-      font-size: 36px;
-      margin: 0;
-      text-align: center;
-    }
+ h1 {
+   font-size: 36px;
+   margin: 0;
+   text-align: center;
+ }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
+ nav {
+   display: flex;
+   justify-content: center;
+   margin-top: 20px;
+ }
 
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
+ nav ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   display: flex;
+ }
 
-    nav li {
-      margin: 0 10px;
-    }
+ nav li {
+   margin: 0 10px;
+ }
 
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+ nav a {
+   color: #ffffff;
+   text-decoration: none;
+   transition: color 0.3s ease;
+ }
 
-    nav a:hover {
-      color: #e78d43;
-    }
+ nav a:hover {
+   color: #e78d43;
+ }
 
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-    }
+ main {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 20px;
+ }
 
-    .banner {
-      background-image: url("bamboo-tree.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 400px;
-      width: 100%;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+ .banner h2 {
+   font-size: 48px;
+   color: #F2EDEB;
+   text-align: center;
+   text-shadow: 2px 2px #c76719;
+ }
 
-    .banner h2 {
-      font-size: 48px;
-      color: #F2EDEB;
-      text-align: center;
-      text-shadow: 2px 2px #c76719;
-    }
+ .section {
+   background-color: #F2EDEB;
+   padding: 20px;
+   margin-bottom: 20px;
+   border: 2px solid #dd863b;
+   box-shadow: 2px 2px #c26111;
+   width: 90%;
+   max-width: 600px;
+   text-align: center;
+ }
 
-    .section {
-      background-color: #F2EDEB;
-      padding: 20px;
-      margin-bottom: 20px;
-      border: 2px solid #dd863b;
-      box-shadow: 2px 2px #c26111;
-      width: 90%;
-      max-width: 600px;
-      text-align: center;
-    }
+ .section h3 {
+   font-size: 24px;
+   margin: 0 0 20px 0;
+   color: #bd7333;
+   text-shadow: 1px 1px #F2EDEB;
+ }
 
-    .section h3 {
-      font-size: 24px;
-      margin: 0 0 20px 0;
-      color: #bd7333;
-      text-shadow: 1px 1px #F2EDEB;
-    }
+ .section p {
+   margin: 0;
+ }
 
-    .section p {
-      margin: 0;
-    }
+ footer {
+   background-color: #6d3504;
+   color: #f8dcd0;
+   padding: 10px;
+   text-align: center;
+ }
 
-    footer {
-      background-color: #6d3504;
-      color: #f8dcd0;
-      padding: 10px;
-      text-align: center;
-    }
+ .coffee-item {
+   background: white;
+ }
 
-    .coffee-item {
-      background: white;
-    }
+ .tcoffee {
+  size: 200px;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  margin: 25px 0;
+  min-width: 400px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 25px 300px;
+  border-collapse: collapse;
+ }
+
+ table {
+  width: 400px;
+ }

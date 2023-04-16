@@ -22,4 +22,21 @@
       </ul>
     </nav>
   </header>
+  <h2>text</h2>
+  <p> text</p>
+  <video id="video" width="360" height="270" autoplay></video>
+  <script>
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function (stream) {
+        var video = document.getElementById("video");
+        video.srcObject = stream;
+        video.play();
+      })
+      .catch(function (err) {
+        console.log("Error accessing webcam: " + err.message);
+      });
+  </script>
+
+  
+</body>
 </html>

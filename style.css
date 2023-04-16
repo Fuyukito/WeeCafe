@@ -6,7 +6,7 @@
  }
 
  header {
-   background-color: #6d3504;
+   background-color: #975e2c;
    color: #F2EDEB;
    padding: 20px;
  }
@@ -78,6 +78,7 @@
 
  .section p {
    margin: 0;
+   text-align: center;
  }
 
  footer {
@@ -89,6 +90,13 @@
 
  .coffee-item {
    background: white;
+   margin: 10px auto;
+   width: 400px;
+   height: 250px;
+   text-align: center;
+   padding-bottom: 0%;
+   text-emphasis-position: bottom;
+
  }
 
  .tcoffee {
@@ -145,4 +153,37 @@
 
 .cphoto:nth-child(4) {
   animation-delay: 15s;
+}
+
+.h3 p {
+  text-align: center;
+  color: #6d3504;
+}
+
+#video {
+  display: block;
+  margin: auto;
+  border: 2px solid black;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.controls button {
+  margin: 0 5px;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+h5 {
+  text-align: center;
+  color: #d10b0b;
+
+}
+
+.p3 {
+  text-align: center;
 }

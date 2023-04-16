@@ -22,21 +22,26 @@
       </ul>
     </nav>
   </header>
-  <h2>text</h2>
-  <p> text</p>
-  <video id="video" width="360" height="270" autoplay></video>
-  <script>
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(function (stream) {
-        var video = document.getElementById("video");
-        video.srcObject = stream;
-        video.play();
-      })
-      .catch(function (err) {
-        console.log("Error accessing webcam: " + err.message);
-      });
-  </script>
-
-  
+  <main>
+    <h2>Clients Area</h2>
+    <p>Hello</p>
+    <video id="video" width="360" height="270" autoplay></video>
+    <script>
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function (stream) {
+          var video = document.getElementById("video");
+          video.srcObject = stream;
+          video.play();
+        })
+        .catch(function (err) {
+          console.log("Error accessing webcam: " + err.message);
+        });
+    </script>
+    <p>You can click on the camera to have a different screem mode and play with that!</p>
+  </main>
+  <footer>
+    <p>&copy; 2023 WeeCafe</p>
+  </footer>
 </body>
+
 </html>

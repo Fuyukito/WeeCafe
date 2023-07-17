@@ -24,9 +24,12 @@
   </header>
   <main>
     <h2>Clients Area</h2>
-    <p>Hello Friend! We've been working on a WeeChat for you to share experiences with another friends in our cafe!</p>
-      <p>You can use your WeebCam to share experiencies in our cafe and we will post on our medias!</p>
+    <p>Hello Friend! Welcome to WeeChat, a place to share your experiences with friends at our cafe!</p>
+    <p>Use your webcam to capture special moments, and we'll share them on our social media!</p>
     <video id="video" width="360" height="270" autoplay></video>
+    <div>
+      <button id="playPauseButton">Play/Pause</button>
+      <button id="fullScreenButton">Full Screen</button>
     <script>
       navigator.mediaDevices.getUserMedia({ video: true })
         .then(function (stream) {
@@ -37,6 +40,32 @@
         .catch(function (err) {
           console.log("Error accessing webcam: " + err.message);
         });
+
+        const video = document.getElementById("video");
+    const playPauseButton = document.getElementById("playPauseButton");
+    const fullScreenButton = document.getElementById("fullScreenButton");
+    const mediaForm = document.getElementById("mediaForm");
+
+    // Play/Pause video
+    playPauseButton.addEventListener("click", function () {
+      if (video.paused) {
+        video.play();
+        playPauseButton.textContent = "Pause";
+      } else {
+        video.pause();
+        playPauseButton.textContent = "Play";
+      }
+    });
+
+    // Full Screen video
+    fullScreenButton.addEventListener("click", function () {
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+      }
+    });
+
     </script>
     <p>You can click on the camera to have different screen mode and play with that!</p>
   </main>

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <link rel="shotcut icon" type="x-icon" href="./images/BrownIcon.svg">
+  <link rel="shortcut icon" type="image/x-icon" href="./images/BrownIcon.svg">
   <title>WeeCafe</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
 <body>
   <header>
     <h1>
-      <img src="./images/HakuLogoRender.png" width="300px">
+      <img src="./images/HakuLogoRender.png" width="300px" alt="WeeCafe">
     </h1>
     <nav>
       <ul>
@@ -28,54 +28,97 @@
       <tr>
         <td>
           <div class="coffee-item">
-              <img src="./images/espresso.png" alt="Espresso">
-              <h4 class="product-title">Espresso</h4>
-              <div class="btn">Buy Now</div>
-              </div>
-            </div>
+            <img src="./images/espresso.png" alt="Espresso">
+            <h4 class="product-title">Espresso</h4>
+            <div class="btn" onclick="addToOrder('Espresso')">Buy Now</div>
+          </div>
         </td>
         <td>
           <div class="coffee-item">
-              <img src="./images/americano.png" alt="Americano">
-              <h4 class="product-title">Americano</h4>
-              <div class="btn" href="style.css">Buy Now</div>
-            </div>
+            <img src="./images/americano.png" alt="Americano">
+            <h4 class="product-title">Americano</h4>
+            <div class="btn" onclick="addToOrder('Americano')">Buy Now</div>
+          </div>
         </td>
         <td>
           <div class="coffee-item">
-              <img src="./images/cappuccino.png" alt="Cappuccino">
-              <h4 class="product-title">Cappuccino</h4>
-              <div class="btn" href="style.css">Buy Now</div>
-            </div>
+            <img src="./images/cappuccino.png" alt="Cappuccino">
+            <h4 class="product-title">Cappuccino</h4>
+            <div class="btn" onclick="addToOrder('Cappuccino')">Buy Now</div>
+          </div>
         </td>
       </tr>
       <tr>
         <td>
           <div class="coffee-item">
-              <img src="./images/latte.png" alt="Latte">
-              <h4 class="product-title">Latte</h4>
-              <div class="btn" href="style.css">Buy Now</div>
-            </div>
+            <img src="./images/latte.png" alt="Latte">
+            <h4 class="product-title">Latte</h4>
+            <div class="btn" onclick="addToOrder('Latte')">Buy Now</div>
+          </div>
         </td>
         <td>
           <div class="coffee-item">
-              <img src="./images/mocha.png" alt="Mocha">
-              <h4 class="product-title">Mocha</h4>
-              <div class="btn" href="style.css">Buy Now</div>
-            </div>
+            <img src="./images/mocha.png" alt="Mocha">
+            <h4 class="product-title">Mocha</h4>
+            <div class="btn" onclick="addToOrder('Mocha')">Buy Now</div>
+          </div>
         </td>
         <td>
           <div class="coffee-item">
-              <img src="./images/macchiato.png" alt="Macchiato">
-              <h4 class="product-title">Macchiato</h4>
-              <div class="btn" href="style.css">Buy Now</div>
-            </div>
+            <img src="./images/macchiato.png" alt="Macchiato">
+            <h4 class="product-title">Macchiato</h4>
+            <div class="btn" onclick="addToOrder('Macchiato')">Buy Now</div>
+          </div>
         </td>
       </tr>
     </table>
+
+    <h2>Order List</h2>
+    <ul id="orderList">
+    </ul>
+
+    <button onclick="completeOrder()">Complete Order</button>
   </main>
   <footer>
     <p>&copy; 2023 WeeCafe</p>
   </footer>
+
+  <script>
+    const orderList = [];
+
+    function addToOrder(item) {
+      orderList.push(item);
+      updateOrderList();
+    }
+
+    function removeItem(index) {
+      orderList.splice(index, 1);
+      updateOrderList();
+    }
+
+    function updateOrderList() {
+      const orderListElement = document.getElementById("orderList");
+      orderListElement.innerHTML = "";
+      orderList.forEach((item, index) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = item;
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.onclick = () => removeItem(index);
+        listItem.appendChild(removeButton);
+        orderListElement.appendChild(listItem);
+      });
+    }
+
+    function completeOrder() {
+      // Implement your logic to process the complete order, e.g., submit to the server.
+      // For now, we will simply alert the order items.
+      alert("Your Order:\n" + orderList.join("\n"));
+      orderList.length = 0; // Clear the order list after completion.
+      updateOrderList();
+    }
+  </script>
+
 </body>
+
 </html>

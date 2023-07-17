@@ -2,41 +2,59 @@
 <html>
 
 <head>
-  <link rel="shotcut icon" type="x-icon" href="./images/BrownIcon.svg">
+  <!-- The icon that appears in the browser tab -->
+  <link rel="shortcut icon" type="image/x-icon" href="./images/BrownIcon.svg">
   <title>WeeCafe</title>
+  <!-- The character encoding for the document, which ensures special characters are displayed correctly -->
   <meta charset="UTF-8">
+  <!-- Sets the width of the webpage to match the device's screen width and initial zoom level -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link to an external CSS file to style the webpage -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body>
   <header>
     <h1>
       <img src="./images/HakuLogoRender.png" width="300px">
     </h1>
+    <!-- A navigation bar with a list of links -->
     <nav>
       <ul>
+        <!-- Link to the home page (index.html) -->
         <li><a href="index.html">Home</a></li>
+        <!-- Link to the coffee menu page (coffeelist.html) -->
         <li><a href="coffeelist.html">Coffee Menu</a></li>
+        <!-- Link to the client area page (clientarea.html) -->
         <li><a href="clientarea.html">Client Area</a></li>
       </ul>
     </nav>
   </header>
+
+
   <main>
+
     <h2>Welcome to WeeCafe!</h2>
     <p>At WeeCafe, we serve the best coffee in town. Our cozy cafe is the perfect place to relax, catch up with friends,
       or get some work done.</p>
     <p>Our menu includes a wide variety of coffees all made with the freshest ingredients. We also offer free Wi-Fi and
       plenty of comfortable seating.</p>
+
+    <!-- A section containing a gallery of coffee photos -->
     <section class="galery">
-      <img class='cphoto'  src="./images/00.jpeg"/>
-      <img class='cphoto'  src="./images/01.jpg"/>
-      <img class='cphoto'  src="./images/02.png"  />
-      <img class='cphoto'  src="./images/03.png"  />
+      <!-- Each image represents a coffee photo with a class name "cphoto" -->
+      <img class='cphoto' src="./images/00.jpeg" />
+      <img class='cphoto' src="./images/01.jpg" />
+      <img class='cphoto' src="./images/02.png" />
+      <img class='cphoto' src="./images/03.png" />
     </section>
+
     <p>Visit us today and experience the warm & friendly atmosphere of WeeCafe.</p>
   </main>
+
   <footer>
+
     <p>&copy; 2023 WeeCafe</p>
   </footer>
 </body>

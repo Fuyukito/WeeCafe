@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="shotcut icon" type="x-icon" href="./images/BrownIcon.svg">
+  <title>WeeCafe</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>
+      <img src="./images/HakuLogoRender.png" width="300px">
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="coffeelist.html">Coffee Menu</a></li>
+        <li><a href="clientarea.html">Client Area</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Clients Area</h2>
+    <p>Hello Friend! We've been working on a WeeChat for you to share experiences with another friends in our cafe!</p>
+      <p>You can use your WeebCam to share experiencies in our cafe and we will post on our medias!</p>
+    <video id="video" width="360" height="270" autoplay></video>
+    <script>
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function (stream) {
+          var video = document.getElementById("video");
+          video.srcObject = stream;
+          video.play();
+        })
+        .catch(function (err) {
+          console.log("Error accessing webcam: " + err.message);
+        });
+    </script>
+    <p>You can click on the camera to have different screen mode and play with that!</p>
+  </main>
+  <footer>
+    <p>&copy; 2023 WeeCafe</p>
+  </footer>
+</body>
+
+</html>

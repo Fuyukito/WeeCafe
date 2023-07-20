@@ -16,6 +16,7 @@
     </h1>
     <nav>
       <ul>
+        <!-- List items representing navigation links -->
         <li><a href="index.html">Home</a></li>
         <li><a href="coffeelist.html">Coffee Menu</a></li>
         <li><a href="clientarea.html">Client Area</a></li>
@@ -23,16 +24,24 @@
     </nav>
   </header>
   <main>
+    <!-- Heading for the coffee menu -->
     <h2>Coffee Menu</h2>
+    <!-- Table to display coffee items -->
     <table class="tcoffee">
+      <!-- First row of coffee items -->
       <tr>
+        <!-- Cell for the first coffee item -->
         <td>
           <div class="coffee-item">
+            <!-- Image of the coffee item with alt text -->
             <img src="./images/espresso.png" alt="Espresso">
+            <!-- Title of the coffee item -->
             <h4 class="product-title">Espresso</h4>
+            <!-- Button to add the item to the order list with an onclick event -->
             <div class="btn" onclick="addToOrder('Espresso')">Buy Now</div>
           </div>
         </td>
+        <!-- Cell for the second coffee item -->
         <td>
           <div class="coffee-item">
             <img src="./images/americano.png" alt="Americano">
@@ -40,6 +49,7 @@
             <div class="btn" onclick="addToOrder('Americano')">Buy Now</div>
           </div>
         </td>
+        <!-- Cell for the third coffee item -->
         <td>
           <div class="coffee-item">
             <img src="./images/cappuccino.png" alt="Cappuccino">
@@ -48,6 +58,7 @@
           </div>
         </td>
       </tr>
+      <!-- Second row of coffee items -->
       <tr>
         <td>
           <div class="coffee-item">
@@ -73,46 +84,55 @@
       </tr>
     </table>
 
+
     <h2>Order List</h2>
     <ul id="orderList">
     </ul>
 
+    <!-- Button to complete the order with an onclick event -->
     <button onclick="completeOrder()">Complete Order</button>
   </main>
+
   <footer>
+
     <p>&copy; 2023 WeeCafe</p>
   </footer>
 
+  <!-- JavaScript section for handling the order list and order completion -->
   <script>
+    // Array to store the order items
     const orderList = [];
 
+    // Function to add an item to the order list
     function addToOrder(item) {
       orderList.push(item);
       updateOrderList();
     }
 
+    // Function to remove an item from the order list by index
     function removeItem(index) {
       orderList.splice(index, 1);
       updateOrderList();
     }
 
+    // Function to update the displayed order list on the webpage
     function updateOrderList() {
       const orderListElement = document.getElementById("orderList");
-      orderListElement.innerHTML = "";
+      orderListElement.innerHTML = ""; // Clear the current order list display
       orderList.forEach((item, index) => {
+        // Create a list item for each order item
         const listItem = document.createElement("li");
-        listItem.textContent = item;
+        listItem.textContent = item; // Set the text content of the list item
         const removeButton = document.createElement("button");
-        removeButton.textContent = "Remove";
-        removeButton.onclick = () => removeItem(index);
+        removeButton.textContent = "Remove"; // Button text to remove the item
+        removeButton.onclick = () => removeItem(index); // Add onclick event to remove the item
         listItem.appendChild(removeButton);
-        orderListElement.appendChild(listItem);
+        orderListElement.appendChild(listItem); // Add the list item to the order list
       });
     }
 
+    // Function to complete the order
     function completeOrder() {
-      // Implement your logic to process the complete order, e.g., submit to the server.
-      // For now, we will simply alert the order items.
       alert("Your Order:\n" + orderList.join("\n"));
       orderList.length = 0; // Clear the order list after completion.
       updateOrderList();

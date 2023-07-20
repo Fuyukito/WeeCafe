@@ -1,7 +1,7 @@
 {
-  "name": "tutorial",
+  "name": "WeeCafee",
   "version": "1.0.0",
-  "description": "",
+  "description": "Danilo Ramos - 2021360",
   "main": "main.js",
   "scripts": {
     "start": "electron .",

@@ -2,19 +2,19 @@
 <html>
 
 <head>
-  <link rel="shortcut icon" type="image/x-icon" href="./images/BrownIcon.svg">
+  <link rel="shortcut icon" type="image/x-icon" href="./images/BrownIcon.svg"> <!-- Set the favicon for the website -->
   <title>WeeCafe</title>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"> <!-- Set the character encoding and viewport for responsive design -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"> <!-- Link the external CSS stylesheet -->
 </head>
 
 <body>
-  <header>
+  <header> <!-- Header section of the webpage -->
     <h1>
-      <img src="./images/HakuLogoRender.png" width="300px" alt="WeeCafe">
+      <img src="./images/HakuLogoRender.png" width="200px"> <!-- Logo of the website with a specified width -->
     </h1>
-    <nav>
+    <nav> <!-- Navigation menu for the website -->
       <ul>
         <!-- List items representing navigation links -->
         <li><a href="index.html">Home</a></li>
@@ -24,21 +24,16 @@
     </nav>
   </header>
   <main>
-    <!-- Heading for the coffee menu -->
-    <h2>Coffee Menu</h2>
-    <!-- Table to display coffee items -->
-    <table class="tcoffee">
-      <!-- First row of coffee items -->
-      <tr>
-        <!-- Cell for the first coffee item -->
-        <td>
+    <h2>Coffee Menu</h2>     <!-- Heading for the coffee menu -->
+    <table class="tcoffee">     <!-- Table to display coffee items -->
+      <tr>       <!-- First row of coffee items -->
+        <td>         <!-- Cell for the first coffee item -->
           <div class="coffee-item">
-            <!-- Image of the coffee item with alt text -->
-            <img src="./images/espresso.png" alt="Espresso">
-            <!-- Title of the coffee item -->
-            <h4 class="product-title">Espresso</h4>
+            <img src="./images/espresso.png" alt="Espresso">  <!-- Image of the coffee item with alt text -->
+            <h4 class="product-title">Espresso</h4>             <!-- Title of the coffee item -->
+            <p class="product-price">Price: €2.00</p>
             <!-- Button to add the item to the order list with an onclick event -->
-            <div class="btn" onclick="addToOrder('Espresso')">Buy Now</div>
+            <div class="btn" onclick="addToOrder('Espresso', 2.00)">Buy Now</div>
           </div>
         </td>
         <!-- Cell for the second coffee item -->
@@ -46,7 +41,9 @@
           <div class="coffee-item">
             <img src="./images/americano.png" alt="Americano">
             <h4 class="product-title">Americano</h4>
-            <div class="btn" onclick="addToOrder('Americano')">Buy Now</div>
+            <p class="product-price">Price: €2.50</p>
+            <!-- Button to add the item to the order list with an onclick event -->
+            <div class="btn" onclick="addToOrder('Americano', 2.50)">Buy Now</div>
           </div>
         </td>
         <!-- Cell for the third coffee item -->
@@ -54,91 +51,55 @@
           <div class="coffee-item">
             <img src="./images/cappuccino.png" alt="Cappuccino">
             <h4 class="product-title">Cappuccino</h4>
-            <div class="btn" onclick="addToOrder('Cappuccino')">Buy Now</div>
+            <p class="product-price">Price: €3.90</p>
+            <!-- Button to add the item to the order list with an onclick event -->
+            <div class="btn" onclick="addToOrder('Cappuccino', 3.90)">Buy Now</div>
           </div>
         </td>
       </tr>
-      <!-- Second row of coffee items -->
       <tr>
         <td>
           <div class="coffee-item">
             <img src="./images/latte.png" alt="Latte">
             <h4 class="product-title">Latte</h4>
-            <div class="btn" onclick="addToOrder('Latte')">Buy Now</div>
+            <p class="product-price">Price: €4.20</p>
+            <!-- Button to add the item to the order list with an onclick event -->
+            <div class="btn" onclick="addToOrder('Latte', 4.20)">Buy Now</div>
           </div>
         </td>
         <td>
           <div class="coffee-item">
-            <img src="./images/mocha.png" alt="Mocha">
-            <h4 class="product-title">Mocha</h4>
-            <div class="btn" onclick="addToOrder('Mocha')">Buy Now</div>
+            <img src="./images/mocha.png" alt="Moccha">
+            <h4 class="product-title">Moccha</h4>
+            <p class="product-price">Price: €4.50</p>
+            <!-- Button to add the item to the order list with an onclick event -->
+            <div class="btn" onclick="addToOrder('Moccha', 4.50)">Buy Now</div>
           </div>
         </td>
         <td>
           <div class="coffee-item">
             <img src="./images/macchiato.png" alt="Macchiato">
             <h4 class="product-title">Macchiato</h4>
-            <div class="btn" onclick="addToOrder('Macchiato')">Buy Now</div>
+            <p class="product-price">Price: €4.75</p>
+            <!-- Button to add the item to the order list with an onclick event -->
+            <div class="btn" onclick="addToOrder('Macchiato', 4.75)">Buy Now</div>
           </div>
         </td>
       </tr>
     </table>
 
-
     <h2>Order List</h2>
-    <ul id="orderList">
-    </ul>
+    <ul id="orderList"></ul>
 
-    <!-- Button to complete the order with an onclick event -->
+    <p>Total Order Amount: <span id="totalAmount">€0.00</span></p>
     <button onclick="completeOrder()">Complete Order</button>
+
   </main>
 
   <footer>
-
     <p>&copy; 2023 WeeCafe</p>
   </footer>
-
-  <!-- JavaScript section for handling the order list and order completion -->
-  <script>
-    // Array to store the order items
-    const orderList = [];
-
-    // Function to add an item to the order list
-    function addToOrder(item) {
-      orderList.push(item);
-      updateOrderList();
-    }
-
-    // Function to remove an item from the order list by index
-    function removeItem(index) {
-      orderList.splice(index, 1);
-      updateOrderList();
-    }
-
-    // Function to update the displayed order list on the webpage
-    function updateOrderList() {
-      const orderListElement = document.getElementById("orderList");
-      orderListElement.innerHTML = ""; // Clear the current order list display
-      orderList.forEach((item, index) => {
-        // Create a list item for each order item
-        const listItem = document.createElement("li");
-        listItem.textContent = item; // Set the text content of the list item
-        const removeButton = document.createElement("button");
-        removeButton.textContent = "Remove"; // Button text to remove the item
-        removeButton.onclick = () => removeItem(index); // Add onclick event to remove the item
-        listItem.appendChild(removeButton);
-        orderListElement.appendChild(listItem); // Add the list item to the order list
-      });
-    }
-
-    // Function to complete the order
-    function completeOrder() {
-      alert("Your Order:\n" + orderList.join("\n"));
-      orderList.length = 0; // Clear the order list after completion.
-      updateOrderList();
-    }
-  </script>
-
+  <script src="code.js"></script> <!-- Link the external JS script -->
 </body>
 
 </html>

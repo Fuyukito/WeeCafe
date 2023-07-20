@@ -1,3 +1,4 @@
+/* Styles for the entire page */
 body {
 	background-color: #ffffff;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -5,18 +6,21 @@ body {
 	line-height: 1.5;
 }
 
+/* Styles for the header section */
 header {
 	background-color: #975e2c;
 	color: #F2EDEB;
 	padding: 20px;
 }
 
+/* Styles for the main heading */
 h1 {
 	font-size: 36px;
 	margin: 0;
 	text-align: center;
 }
 
+/* Styles for the navigation menu */
 nav {
 	display: flex;
 	justify-content: center;
@@ -44,6 +48,7 @@ nav a:hover {
 	color: #e78d43;
 }
 
+/* Styles for the main content section */
 main {
 	display: flex;
 	flex-direction: column;
@@ -51,6 +56,7 @@ main {
 	padding: 20px;
 }
 
+/* Styles for the banner heading */
 .banner h2 {
 	font-size: 48px;
 	color: #F2EDEB;
@@ -58,6 +64,7 @@ main {
 	text-shadow: 2px 2px #c76719;
 }
 
+/* Styles for each section within the main content */
 .section {
 	background-color: #F2EDEB;
 	padding: 20px;
@@ -81,6 +88,7 @@ main {
 	text-align: center;
 }
 
+/* Styles for the footer section */
 footer {
 	background-color: #6d3504;
 	color: #f8dcd0;
@@ -88,6 +96,7 @@ footer {
 	text-align: center;
 }
 
+/* Styles for the coffee menu table */
 .tcoffee {
 	display: flex;
 	align-items: center;
@@ -146,6 +155,7 @@ footer {
 	transform: scale(1.3);
 }
 
+/* Styles for the coffee gallery */
 table {
 	width: 400px;
 }
@@ -190,6 +200,7 @@ table {
 	animation-delay: 15s;
 }
 
+/* Styles for the video section */
 h3 p {
 	text-align: center;
 	color: #6d3504;
@@ -221,6 +232,7 @@ h5 {
 	text-align: center;
 }
 
+/* Styles for the product section */
 .product {
 	overflow: hidden;
 	background: #ffffff;
@@ -273,6 +285,7 @@ h5 {
 	transform: scale(1.1);
 }
 
+/* Styles for general buttons */
 .btn {
 	background-color: #744108;
 	color: white;
@@ -287,24 +300,26 @@ h5 {
 	background-color: #cfaa59;
 }
 
+/* Styles for specific buttons with IDs */
 #playPauseButton,
 #fullScreenButton {
-  background-color: #744108;
-  color: white;
-  padding: 8px 15px;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-  margin-right: 10px;
-  align-content: center;
+	background-color: #744108;
+	color: white;
+	padding: 8px 15px;
+	cursor: pointer;
+	border: none;
+	border-radius: 4px;
+	transition: background-color 0.3s;
+	margin-right: 10px;
+	align-content: center;
 }
 
 #playPauseButton:hover,
 #fullScreenButton:hover {
-  background-color: #cfaa59;
+	background-color: #cfaa59;
 }
 
+/* Styles for generic buttons */
 button {
 	background-color: #744108;
 	color: white;
@@ -318,5 +333,3 @@ button {
   button:hover {
 	background-color: #cfaa59;
   }
-
-  
